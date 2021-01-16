@@ -1,0 +1,12 @@
+{
+    "artist": "Bach",
+    "album": "Way too baroque",
+    "year": 1600,
+    "songs": [
+        "Toccata and Fugue",
+        "Flute Partita",
+        "Air",
+        "Flute Sonata",
+        "Lute Suite"
+    ]
+}
