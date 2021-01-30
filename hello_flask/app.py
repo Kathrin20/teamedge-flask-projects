@@ -26,18 +26,14 @@ def organizedmovies_json():
 	json_info =''
 	organizedmovies_info = os.path.join(app.static_folder, 'data','movies.json')
 	with open(organizedmovies_info, 'r') as json_data:
-		json_info = json.load(json_data)
-		return jsonify(json_info)
-	results = []
+		json_info = json.load(json_data) 
+	results=[]
+
 	if 'title' in request.args:
 		title = request.args['title']
 
 		for movie in json_info:
-			if title in movie['title']:
-				results.append(movie)
-
-	if len(results) < 1:
-		return "No results found"
+			results.append(movie)
 	return render_template('movies.html', results=results)	
 
 
