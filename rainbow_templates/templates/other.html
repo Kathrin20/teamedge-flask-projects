@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>http://0.0.0.0:5000/red</p>
+    <p>http://0.0.0.0:5000/orange</p>
+    <p>http://0.0.0.0:5000/yellow</p>
+    <p>http://0.0.0.0:5000/green</p>
+    <p>http://0.0.0.0:5000/blue</p>
+    <p>http://0.0.0.0:5000/indigo</p>
+    <p>http://0.0.0.0:5000/violet</p>
+
+   
+    {% for color in colors %}
+    <li>
+        <a href="/{{ color }}">{{ color }}</a>
+    </li>
+    {% endfor %}
+
+    
+</body>
+</html>

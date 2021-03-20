@@ -9,43 +9,36 @@ def index():
 
 @app.route('/red')
 def red_html():
-    color = 'red'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'red')
 
 @app.route('/orange')
 def orange_html():
-    color = 'orange'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'orange')
 
 @app.route('/yellow')
 def yellow_html():
-    color = 'yellow'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'yellow')
 
 @app.route('/green')
 def green_html():
-    color = 'greem'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'green')
 
 @app.route('/blue')
 def blue_html():
-    color = 'blue'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'blue')
 
 @app.route('/indigo')
 def indigo_html():
-    color = 'indigo'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'indigo')
 
 @app.route('/violet')
 def violet_html():
-    color = 'violet'
-    return render_template('colorful.html', color = color)
+    return render_template('colorful.html', color = 'violet')
 
 @app.route('/rainbow')
 def rainbow_html():
-    color = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ]
-    return render_template('colorful.html', color = color)
+    color = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+    return render_template('other.html', color = color)
 
 if __name__ == '__main__':
     app.run(debug=True, host ='0.0.0.0')
