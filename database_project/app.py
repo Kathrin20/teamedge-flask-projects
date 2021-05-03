@@ -8,9 +8,9 @@ import sqlite3
 sense = SenseHat()
 
 app = Flask(__name__)
-#scheduler = APScheduler()
-#scheduler.init_app(app)
-#scheduler.start()
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.start()
 
 #scheduler.add_job(id ='1', func = 'show_reminder', trigger='date', 
 #run_date = '2021-04-26T8:15', args=['Do your Micro hw :/'])
@@ -31,7 +31,7 @@ def done():
 
     conn = sqlite3.connect('./static/data/senseDisplay.db')
     curs = conn.cursor()
-    curs.execute("INSERT INTO (name, message) VALUES((?),(?)", (reminder, date))
+    curs.execute("INSERT INTO (reminder, date) VALUES((?),(?)", (reminder, date))
     conn.commit()
 
     conn.close()
