@@ -31,7 +31,7 @@ def done():
 
     conn = sqlite3.connect('./static/data/senseDisplay.db')
     curs = conn.cursor()
-    curs.execute("INSERT INTO (reminder, date) VALUES((?),(?)", (reminder, date))
+    curs.execute("INSERT INTO (reminder, date) VALUES((?),(?))", (reminder, date))
     conn.commit()
 
     conn.close()
