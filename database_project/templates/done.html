@@ -8,10 +8,22 @@
 </head>
 <body>
     
-    <p>Remember to complete:</p>
-    {{ reminder }}
-    <p> By: </p>
-    {{ date }}
+    <h2>Remember to complete:</h2>
+
+    <p>{{ reminder }} </p>
+
+    <h2>By: </h2>
+
+    <p>{{ date }}</p>
+
+    <h3>Other assignments:</h3>
+
+    <div style="text-align: center">
+    <form action = "/response" method="post">
+        <input type = "submit" value = "Look!" />
+        
+    </form>
+    </div>
 
 </body>
 </html>

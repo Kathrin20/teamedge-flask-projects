@@ -8,20 +8,7 @@ p {
     font-size: 20px;
 }
 
-h2 {
+ul {
     color:blue;
-    text-align: center;
-}
-
-h3 {
-    color:blue;
-    text-align: center;
- 
-}
-
-input[type = submit] {
-    background-color: blue;
-    border: blue;
-    color: white;
-
+    font-size: 20px;
 }

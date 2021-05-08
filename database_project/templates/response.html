@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="static/response.css">
 </head>
 <body>
+<p>This is were you can see everything you have to do :)</p>
+<ul>
+    {% for reminders in remember %}
+    <li>
+        <span>{{reminders["reminder"]}}</span>
+    </li>
+    {% endfor %}
 
+</ul>
 </body>
 </html>

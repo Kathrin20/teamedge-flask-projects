@@ -29,9 +29,9 @@ def done():
 
     sense.show_message(display)
 
-    conn = sqlite3.connect('./static/data/senseDisplay.db')
+    conn = sqlite3.connect('./static/data/remember.db')
     curs = conn.cursor()
-    curs.execute("INSERT INTO (reminder, date) VALUES((?),(?))", (reminder, date))
+    curs.execute("INSERT INTO remember(reminder, date) VALUES((?),(?))", (reminder, date))
     conn.commit()
 
     conn.close()
@@ -39,10 +39,15 @@ def done():
 
 @app.route('/response', methods=['GET', 'POST'])
 def response():
-
-
-
-    return render_template("response.html")
+    conn = sqlite3.connect('./static/data/remember.db')
+    curs = conn.cursor()
+    remember = []
+    rows = curs.execute("SELECT * from remember")
+    for row in rows:
+        reminders = {'reminder': row[0], 'date': row[1]}
+        remember.append(reminders)
+    conn.close()
+    return render_template("response.html", remember = remember)
 
 if __name__ == '__main__':
     app.run(debug = True, host = '0.0.0.0')
